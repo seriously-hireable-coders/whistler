@@ -2,7 +2,7 @@
 
 ## Description
 
-## Team
+## Team members
 
 - Ryan "I Am Vengeance" Bagan
 - Kyle Freemantle
