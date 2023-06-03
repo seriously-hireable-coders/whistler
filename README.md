@@ -5,7 +5,7 @@
 ## Team members
 
 - Ryan "I Am Vengeance" Bagan
-- Kyle Freemantle
+- Kyle "I Am The Night" Freemantle
 - Cody Lobdell
 - Thomas Lau
 - Deon Curry
@@ -15,3 +15,7 @@
 ## User Stories
 
 ## Domain Modeling and Wireframing
+
+Wireframe
+
+![Wireframe](./assets/wireframe.jpg)
