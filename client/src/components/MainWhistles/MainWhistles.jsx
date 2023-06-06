@@ -34,7 +34,7 @@ const MainWhistles = () => {
           onChange={(e) => setWhistleText(e.target.value)}
           type="text"
           maxLength={300}
-          placeholder="Wassup Wassup?"
+          placeholder="Blow that Whistle baby!"
           className="bg-slate-200 rounded-lg w-full p-2">
         </textarea>
         <button
