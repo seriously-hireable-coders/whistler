@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import TagIcon from '@mui/icons-material/Tag';
 import PersonIcon from '@mui/icons-material/Person';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import ListAltIcon from '@mui/icons-material/ListAlt';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../redux/userSlice';
@@ -38,11 +43,41 @@ const LeftSidebar = () => {
             <p>Profile</p>
           </div>
         </Link>
+        <Link to='/'>
+          <div className="flex items-center space-x-6 px-2 py-2 hover:bg-slate-200 rounded-full cursor-pointer">
+            <NotificationsNoneIcon fontSize="large" />
+            <p>Notifications</p>
+          </div>
+        </Link>
+        <Link to='/'>
+          <div className="flex items-center space-x-6 px-2 py-2 hover:bg-slate-200 rounded-full cursor-pointer">
+            <MailOutlineIcon fontSize="large" />
+            <p>Messages</p>
+          </div>
+        </Link>
+        <Link to='/'>
+          <div className="flex items-center space-x-6 px-2 py-2 hover:bg-slate-200 rounded-full cursor-pointer">
+            <BookmarkBorderIcon fontSize="large" />
+            <p>Bookmarks</p>
+          </div>
+        </Link>
+        <Link to='/'>
+          <div className="flex items-center space-x-6 px-2 py-2 hover:bg-slate-200 rounded-full cursor-pointer">
+            <ListAltIcon fontSize="large" />
+            <p>Lists</p>
+          </div>
+        </Link>
+        <Link to='/'>
+          <div className="flex items-center space-x-6 px-2 py-2 hover:bg-slate-200 rounded-full cursor-pointer">
+            <MoreHorizIcon fontSize="large" />
+            <p>More</p>
+          </div>
+        </Link>
       </div>
       <div className="flex justify-between">
         <div>
-          <p className="font-bold">Username</p>
-          <p className="font-bold">@Username</p>
+          <p className="font-bold">{currentUser.username}</p>
+          <p className="font-bold">@{currentUser.username}</p>
         </div>
         <div>
           <Link to="signin">
