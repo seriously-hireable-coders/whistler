@@ -11,8 +11,8 @@ import app from '../../firebase';
 
 const EditProfile = ({ setOpen }) => {
   const { currentUser } = useSelector((state) => state.user);
-  const [img, setImg] = useState('null');
-  const [imgUploadProgress, setImgUploadProgress] = useState('0');
+  const [img, setImg] = useState(null);
+  const [imgUploadProgress, setImgUploadProgress] = useState(0);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
