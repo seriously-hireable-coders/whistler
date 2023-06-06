@@ -66,13 +66,16 @@ const Profile = () => {
         <div className="col-span-2 border-x-2 border-t-slate-800 px-6">
           <div className="flex justify-between items-center">
             <img
-            src={userProfile?.profilePicture}
-            alt="Profile Picture"
-            className="w-60 h-60 rounded-full"
+              src={userProfile?.profilePicture}
+              alt="Profile Picture"
+              className="w-60 h-80 rounded-full"
             />
+            <div>
+              <p className="font-bold">@{currentUser.username}</p>
+            </div>
             {currentUser._id === id ? (
               <button className="px-4 -y-2 bg-red-500 rounded-full text-white"
-              onClick={() => setOpen(true)}
+                onClick={() => setOpen(true)}
               >
                 Edit Profile
               </button>
@@ -88,13 +91,13 @@ const Profile = () => {
           </div>
           <div className="mt-6">
             {userWhistles &&
-            userWhistles.map((whistle) => {
-              return (
-              <div className="p-2" key={whistle._id}>
-                <Whistle whistle={whistle} setData={setUserWhistles} />
-              </div>
-              );
-            })}
+              userWhistles.map((whistle) => {
+                return (
+                  <div className="p-2" key={whistle._id}>
+                    <Whistle whistle={whistle} setData={setUserWhistles} />
+                  </div>
+                );
+              })}
           </div>
         </div>
         <div className="px-6">

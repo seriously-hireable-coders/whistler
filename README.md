@@ -30,8 +30,6 @@
 
 - As a user of Whistler, I want to be able to share my thoughts, ideas, and experiences with a global community in a concise and impactful manner. I want to connect with like-minded individuals who share my interests and engage in lively discussions on trending topics. I want to stay informed about the latest news and events as they unfold, and have the ability to join conversations in real-time. Additionally, I expect Whistler to offer a seamless user experience on my web browser, allowing me to access and engage with the community anytime, anywhere.
 
-## Domain Modeling and Wireframing
-
-UML
+## UML
 
 ![UML](img/UML_401_Final.jpg)
