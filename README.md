@@ -32,6 +32,6 @@
 
 ## Domain Modeling and Wireframing
 
-Wireframe
+UML
 
-![Wireframe](./assets/wireframeV1.jpg)
+![UML](img/UML_401_Final.jpg)
