@@ -68,7 +68,7 @@ const Profile = () => {
             <img
             src={userProfile?.profilePicture}
             alt="Profile Picture"
-            className="w-12 h-12 rounded-full"
+            className="w-60 h-60 rounded-full"
             />
             {currentUser._id === id ? (
               <button className="px-4 -y-2 bg-red-500 rounded-full text-white"
@@ -89,9 +89,11 @@ const Profile = () => {
           <div className="mt-6">
             {userWhistles &&
             userWhistles.map((whistle) => {
-              return <div className="p-2" key={whistle._id}>
+              return (
+              <div className="p-2" key={whistle._id}>
                 <Whistle whistle={whistle} setData={setUserWhistles} />
               </div>
+              );
             })}
           </div>
         </div>
