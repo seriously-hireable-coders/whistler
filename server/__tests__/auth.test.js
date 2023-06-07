@@ -1,13 +1,9 @@
-// Assuming you are using a testing framework like Mocha or Jest
-
-// Import the necessary dependencies
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { signup, signin } from './yourFileName.js';
 import User from '../models/User.js';
 import { handleError } from '../error.js';
 
-// Mock the necessary dependencies
 jest.mock('bcryptjs');
 jest.mock('jsonwebtoken');
 jest.mock('../models/User.js');
@@ -19,7 +15,7 @@ describe('Signup Function', () => {
   });
 
   it('should create a new user, generate a token, and return user data', async () => {
-    // Mock request and response objects
+
     const req = {
       body: {
         username: 'testuser',
@@ -32,7 +28,7 @@ describe('Signup Function', () => {
       json: jest.fn(),
     };
 
-    // Mock the necessary functions
+
     const genSaltSyncMock = jest.spyOn(bcrypt, 'genSaltSync').mockReturnValue('salt');
     const hashSyncMock = jest.spyOn(bcrypt, 'hashSync').mockReturnValue('hashedPassword');
     const saveMock = jest.fn();
@@ -48,7 +44,7 @@ describe('Signup Function', () => {
 
     await signup(req, res);
 
-    // Assertions
+
     expect(genSaltSyncMock).toHaveBeenCalledWith(10);
     expect(hashSyncMock).toHaveBeenCalledWith('testpassword', 'salt');
     expect(User).toHaveBeenCalledWith({ ...req.body, password: 'hashedPassword' });
@@ -60,7 +56,7 @@ describe('Signup Function', () => {
   });
 
   it('should pass the error to the next middleware if an error occurs', async () => {
-    // Mock request and response objects
+
     const req = {
       body: {
         username: 'testuser',
@@ -69,7 +65,7 @@ describe('Signup Function', () => {
     };
     const res = {};
 
-    // Mock the necessary functions
+    /
     const genSaltSyncMock = jest.spyOn(bcrypt, 'genSaltSync').mockImplementation(() => {
       throw new Error('Some error occurred');
     });
@@ -78,7 +74,7 @@ describe('Signup Function', () => {
 
     await signup(req, res, nextMock);
 
-    // Assertion
+
     expect(genSaltSyncMock).toHaveBeenCalledWith(10);
     expect(nextMock).toHaveBeenCalledWith(new Error('Some error occurred'));
   });
@@ -90,7 +86,7 @@ describe('Signin Function', () => {
   });
 
   it('should find the user, compare passwords, generate a token, and return user data', async () => {
-    // Mock request and response objects
+
     const req = {
       body: {
         username: 'testuser',
