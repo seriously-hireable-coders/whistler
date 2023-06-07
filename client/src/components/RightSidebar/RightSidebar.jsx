@@ -1,16 +1,51 @@
-import React from 'react'
+import React from 'react';
 
 const RightSidebar = () => {
   return (
-    <div className="p-6 bg-slate-100 rounded-lg mx-4 space-y-4">
-      <h2 className="font-medium">Trending Right Now!</h2>
-      <p className="font-bold">#Batman</p>
-      <p className="font-bold">#CodeFellows</p>
-      <p className="font-bold">#HowToBeAPlayboy</p>
-      <p className="font-bold">#ILoveTomCruise</p>
-      <p className="font-bold">#HowToBecomeTheBatman</p>
+    <div className="p-6 bg-slate-400 rounded-lg mx-4 space-y-4">
+      <h2 className="font-bold text-black">TRENDING RIGHT NOW!!!</h2>
+      <p className="font-bold text-black">#Batman</p>
+      <p className="font-bold text-black">#CodeFellows</p>
+      <p className="font-bold text-black">#HowToBeAPlayboy</p>
+      <p className="font-bold text-black">#ILoveTomCruise</p>
+      <p className="font-bold text-black">#HowToBecomeTheBatman</p>
+
+      <div className="p-2 bg-red-400 rounded-lg mx-4 space-y-4">
+        <div className="mt-6 flex-col space-y-4">
+          <h2 className="font-bold text-black">FREE GAMES BABY!</h2>
+        </div>
+        <p className="text-black">
+          <a href='https://ryanb021.github.io/space-monkey/' target='_blank'>
+          --SpaceMonkeys--
+          </a>
+        </p>
+        <p className="text-black">
+          <a href='https://www.lutanho.net/play/tictac3d.html' target='_blank'>
+          --TicTAc3D--
+          </a>
+        </p>
+        <p className="text-black">
+          <a href='https://www.lutanho.net/play/piracy.html' target='_blank'>
+          --Piracy--
+          </a>
+        </p>
+        <p className="text-black">
+          <a href='https://www.lutanho.net/play/halma.html' target='_blank'>
+          --Halma--
+          </a>
+        </p>
+        <p className="text-black">
+          <a href='https://www.lutanho.net/play/patience42.html' target='_blank'>
+          --Patience--
+          </a>
+        </p>
       </div>
+    </div>
+
+
   )
-}
+};
+
+
 
 export default RightSidebar;

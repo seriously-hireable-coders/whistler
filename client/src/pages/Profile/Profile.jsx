@@ -68,11 +68,9 @@ const Profile = () => {
             <img
               src={userProfile?.profilePicture}
               alt="Profile Picture"
-              className="w-60 h-80 rounded-full"
+              className="w-60 h-60 rounded-full"
             />
-            <div>
-              <p className="font-bold">@{currentUser.username}</p>
-            </div>
+           
             {currentUser._id === id ? (
               <button className="px-4 -y-2 bg-red-500 rounded-full text-white"
                 onClick={() => setOpen(true)}
