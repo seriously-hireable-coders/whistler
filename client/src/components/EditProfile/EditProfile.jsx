@@ -10,7 +10,9 @@ import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/
 import app from '../../firebase';
 
 const EditProfile = ({ setOpen }) => {
-  const { currentUser } = useSelector((state) => state.user);
+  const { currentUser } = useSelector((state) => {
+    return state.user
+  });
   const [img, setImg] = useState(null);
   const [imgUploadProgress, setImgUploadProgress] = useState(0);
 
