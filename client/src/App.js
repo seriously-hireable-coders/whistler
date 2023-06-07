@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from'react';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 
 import './App.css';
@@ -48,8 +49,23 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.body.className = theme;
+  }, [theme]);
+
   return (
-    <div>
+    <div className={`App ${theme}`}>
+      <button onClick={toggleTheme} className="bg-blue-500 px-4 py-2 text-white rounded-full">Toggle Theme</button>
       <RouterProvider router={router}></RouterProvider>
     </div>
   );

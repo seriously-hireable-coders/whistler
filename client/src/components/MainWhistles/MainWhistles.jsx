@@ -35,7 +35,7 @@ const MainWhistles = () => {
           type="text"
           maxLength={300}
           placeholder="Blow that Whistle baby!"
-          className="bg-slate-200 rounded-lg w-full p-2">
+          className="bg-slate-300 rounded-lg w-full p-2 text-black">
         </textarea>
         <button
           onClick={handleSubmit}
