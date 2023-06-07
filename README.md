@@ -22,7 +22,6 @@
 - Kyle "I Am The Night" Freemantle
 - Cody Lobdell
 - Thomas Lau
-- Deon Curry
 
 ## Links
 
