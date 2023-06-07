@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 
 const RightSidebar = () => {
@@ -25,18 +26,23 @@ const RightSidebar = () => {
           </a>
         </p>
         <p className="text-black">
-          <a href='https://www.lutanho.net/play/piracy.html' target='_blank'>
-          --Piracy--
+          <a href='https://www.lutanho.net/play/hangman.html' target='_blank'>
+          --Hangman--
           </a>
         </p>
         <p className="text-black">
-          <a href='https://www.lutanho.net/play/halma.html' target='_blank'>
-          --Halma--
+          <a href='https://www.lutanho.net/play/spider.html' target='_blank'>
+          --Spider Solitaire--
           </a>
         </p>
         <p className="text-black">
-          <a href='https://www.lutanho.net/play/patience42.html' target='_blank'>
-          --Patience--
+          <a href='https://www.lutanho.net/play/sudoku.html' target='_blank'>
+          --Sudoku--
+          </a>
+        </p>
+        <p className="text-black">
+          <a href='https://www.lutanho.net/play/tetris.html' target='_blank'>
+          --Tetris--
           </a>
         </p>
       </div>

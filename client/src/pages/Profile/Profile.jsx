@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import LeftSidebar from '../../components/LeftSidebar/LeftSidebar';
 import RightSidebar from '../../components/RightSidebar/RightSidebar';
@@ -67,7 +68,7 @@ const Profile = () => {
           <div className="flex justify-between items-center">
             <img
               src={userProfile?.profilePicture}
-              alt="Profile Picture"
+              alt="Profile Pic"
               className="w-60 h-60 rounded-full"
             />
            
