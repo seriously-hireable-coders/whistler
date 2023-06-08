@@ -4,8 +4,8 @@ import { render, screen } from '@testing-library/react';
 import { renderWithProviders } from './utils-for-tests';
 
 test('EditProfile: EditProfile is rendered', () => {
-  renderWithProviders(<EditProfile/>);
-//   console.log(currentUser)
+  renderWithProviders(<EditProfile setOpen={true}/>);
+  console.log('currentUser test', currentUser);
   screen.getByRole('');
 //   // const element = screen.getByText(/Sign in to your Whistler/);
 //   // const userNameInput = screen.queryByPlaceholderText(/email/i);
