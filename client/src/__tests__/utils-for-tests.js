@@ -40,11 +40,7 @@ import storage from 'redux-persist/lib/storage';
 export function renderWithProviders(
   ui,
   {
-    preloadedState = {
-      // currentUser: {"_id":{"$oid":"647b3b87c91be26126908b09"},"username":"thomasl","email":"thomasl@gmail.com","password":"$2a$10$9/VT8GA5Mxlch9cKZ7dnpulKXOLQhTa4HqD./Heu874.6KhE8KzIy","followers":["647b1d57a425d84b22608ebe"],"following":[],"createdAt":{"$date":{"$numberLong":"1685797767747"}},"updatedAt":{"$date":{"$numberLong":"1686160631387"}},"__v":{"$numberInt":"0"},"profilePicture":"https://firebasestorage.googleapis.com/v0/b/whistler-b627a.appspot.com/o/1686089593024Mi%20(2).jpg?alt=media&token=d9e051ff-2170-4162-86f5-123566db9716"},
-      // isLoading: false,
-      // error: false,
-    },
+    preloadedState = {},
     // Automatically create a store instance if no store was passed in
     store = configureStore({ reducer: { user: userSlice }, preloadedState }),
     ...renderOptions
