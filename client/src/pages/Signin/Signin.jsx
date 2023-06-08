@@ -50,15 +50,17 @@ const Signin = () => {
       type="text"
       placeholder="username"
       className="text-xl text-black py-2 rounded-full px-4"
+      data-testid="signIn-username-input"
     />
     <input
       onChange={(e) => setPassword(e.target.value)}
       type="password"
       placeholder="password"
       className="text-xl text-black py-2 rounded-full px-4"
+      data-testid="signIn-pw-input"
     />
 
-    <button className="text-xl py-2 rounded-full px-4 bg-blue-500 text-white" onClick={handleLogin}>
+    <button className="text-xl py-2 rounded-full px-4 bg-blue-500 text-white" data-testid="signIn-btn" onClick={handleLogin}>
       Sign In
     </button>
 

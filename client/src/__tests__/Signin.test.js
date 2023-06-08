@@ -1,29 +1,58 @@
 import Signin from '../pages/Signin/Signin';
-import { render, screen } from '@testing-library/react';
-import { Provider } from 'react-redux'
+import { screen, fireEvent } from '@testing-library/react';
+import { renderWithProviders } from './utils-for-tests';
+import { BrowserRouter } from 'react-router-dom';
+import axios from 'axios';
 
-// const initialState = {
-//   currentUser: null,
-//   isLoading: false,
-//   error: false,
-// };
+jest.mock('axios', () => ({
+  post: jest.fn(() => ({
+    data: {message: 'test'}
+  })),
+}));
 
-xtest('check signin input', () => {
-  render(<Provider store={store}><Signin /></Provider>);
+test('Signin/SignUp: user able to type', () => {
+
+  renderWithProviders(<BrowserRouter><Signin /></BrowserRouter>);
   const element = screen.getByText(/Sign in to your Whistler/);
-  screen.getByRole('');
+  const userNameInput = screen.queryByPlaceholderText(/email/i);
+  const signInUserNameInput = screen.getByTestId('signIn-username-input');
+  const signInPwInput = screen.getByTestId('signIn-pw-input');
+  fireEvent.change(userNameInput, { target: { value: 'email@e.com' } });
+  fireEvent.change(signInUserNameInput, { target: { value: 'username' } });
+  fireEvent.change(signInPwInput, { target: { value: 'pw' } });
+  expect(signInPwInput.value).toBe('pw');
+  expect(signInUserNameInput.value).toBe('username');
+  expect(userNameInput.value).toBe('email@e.com');
   expect(element).toBeInTheDocument();
+  expect(userNameInput).toBeInTheDocument();
 });
 
-// describe('With React Testing Library', () => {
-//   const initialState = {output:10}
-//   const mockStore = configureStore()
-//   let store,wrapper
+test('Signin/SignUp: render the sign in and sign up form', () => {
+  renderWithProviders(<BrowserRouter><Signin /></BrowserRouter>);
+  const signInText = screen.getByText(/Sign in to your Whistler/);
+  const signUpText = screen.getByText(/Don't have an account/);
+  const emailInput = screen.queryByPlaceholderText(/email/i);
+  const signInUserNameInput = screen.getByTestId('signIn-username-input');
+  const signInPwInput = screen.getByTestId('signIn-pw-input');
+  const signIntbutton = screen.getByRole("button", { name: /Sign In/i });
+  const signUptbutton = screen.getByRole("button", { name: /Sign Up/i });
+  expect(signInText).toBeInTheDocument();
+  expect(signUpText).toBeInTheDocument();
+  expect(signUptbutton).toBeInTheDocument();
+  expect(signIntbutton).toBeInTheDocument();
+  expect(signInPwInput).toBeInTheDocument();
+  expect(signInUserNameInput).toBeInTheDocument();
+  expect(emailInput).toBeInTheDocument();
+});
 
-//   it('Shows "Hello world!"', () => {
-//     store = mockStore(initialState)
-//     const { getByText } = render(<Provider store={store}><App /></Provider>)
+test('Signin/SignUp: user able to signup', () => {
+  renderWithProviders(<BrowserRouter><Signin /></BrowserRouter>);
+  const signInUserNameInput = screen.getByTestId('signIn-username-input');
+  const signInPwInput = screen.getByTestId('signIn-pw-input');
 
-//     expect(getByText('Hello Worldd!')).not.toBeNull()
-//   })
-// })
+  fireEvent.change(signInUserNameInput, { target: { value: 'username' } });
+  fireEvent.change(signInPwInput, { target: { value: 'pw' } });
+  const signIntbutton = screen.getByRole("button", { name: /Sign In/i });
+  fireEvent.click(signIntbutton);
+  expect(axios.post).toBeCalled();
+});
