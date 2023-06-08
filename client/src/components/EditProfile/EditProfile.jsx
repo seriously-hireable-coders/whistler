@@ -1,9 +1,10 @@
+/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { changeProfile, logout } from '../../redux/userSlice';
-import { useNavigate } from'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
@@ -60,6 +61,23 @@ const EditProfile = ({ setOpen }) => {
       }
     );
   };
+
+  // const handleDelete = async () => {
+  //   if (!currentUser) {
+  //     // Handle the case when currentUser is null or undefined
+  //     console.log("No user is currently logged in.");
+  //     return;
+  //   }
+  
+  //   try {
+  //     const deleteProfile = await axios.delete(`/users/${currentUser._id}`);
+  //     dispatch(logout());
+  //     navigate('/signin');
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
   const handleDelete = async () => {
     const deleteProfile = await axios.delete(`/users/${currentUser._id}`);
     dispatch(logout());

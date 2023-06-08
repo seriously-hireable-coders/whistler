@@ -18,6 +18,7 @@ export const signup = async (req, res, next) => {
     const token = jwt.sign({ id: newUser._id }, process.env.JWT);
 
     const { password, ...othersData } = newUser._doc;
+    othersData.token = token;
     res.cookie('access_token', token, {
       httpOnly: true,
     })
@@ -40,6 +41,7 @@ export const signin = async (req, res, next) => {
 
     const token = jwt.sign({ id: user._id }, process.env.JWT);
     const { password, ...othersData } = user._doc;
+    othersData.token = token;
     res.cookie('access_token', token, { httpOnly: true })
       .status(200)
       .json(othersData);

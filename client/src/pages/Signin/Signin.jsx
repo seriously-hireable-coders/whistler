@@ -17,30 +17,60 @@ const Signin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     dispatch(loginStart());
-    try {
-      const res = await axios.post("/auth/signin", { username, password });
-      dispatch(loginSuccess(res.data));
-      navigate('/');
-      // console.log('res', res.data);
-    } catch (err) {
-      dispatch(loginFailed());
-      // console.log(err);
+
+    const createAccount = window.confirm('You do not have a Whistler account. Please create a new account.');
+
+    if (createAccount) {
+      try {
+        const res = await axios.post("/auth/signin", { username, password });
+        dispatch(loginSuccess(res.data));
+        navigate('/');
+      } catch (err) {
+        dispatch(loginFailed());
+        console.log(err);
+      }
     }
   };
+
+  //   try {
+  //     const res = await axios.post("/auth/signin", { username, password });
+  //     dispatch(loginSuccess(res.data));
+  //     navigate('/');
+  //     // console.log('res', res.data);
+  //   } catch (err) {
+  //     dispatch(loginFailed());
+  //     // console.log(err);
+  //   }
+  // };
 
   const handleSignup = async (e) => {
     e.preventDefault();
     dispatch(loginStart());
 
+    if (!email) {
+      window.alert("Email is required to create a Whistler account");
+      return;
+    }
+  
     try {
       const res = await axios.post("/auth/signup", { username, password, email });
       dispatch(loginSuccess(res.data));
       navigate('/');
     } catch (err) {
       dispatch(loginFailed());
-            // console.log(err);
+      // console.log(err);
     }
-  }
+  };
+
+  //   try {
+  //     const res = await axios.post("/auth/signup", { username, password, email });
+  //     dispatch(loginSuccess(res.data));
+  //     navigate('/');
+  //   } catch (err) {
+  //     dispatch(loginFailed());
+  //           // console.log(err);
+  //   }
+  // }
 
   return <form className="bg-pink-200 flex flex-col py-12 px-8 rounded-lg w-8/12 md:w-6/12 mx-auto gap-10">
     <h2 className="text-3xl text-black font-bold text-center">Sign in to your Whistler account you beautiful person!</h2>
