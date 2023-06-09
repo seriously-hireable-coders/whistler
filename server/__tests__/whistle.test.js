@@ -29,7 +29,7 @@ describe('Whistle Controller', () => {
     });
 
     it('should handle error when save operation fails', async () => {
-      // Mock the request and response objects
+   
       const req = {
         body: { /* mock request body */ },
       };
@@ -38,7 +38,7 @@ describe('Whistle Controller', () => {
         json: jest.fn(),
       };
 
-      // Mock the Whistle model and its save method to throw an error
+      // Whistle model and its save method to throw an error
       const mockError = new Error('Save failed');
       const saveMock = jest.fn().mockRejectedValue(mockError);
       jest.mock('../models/Whistle.js', () => {

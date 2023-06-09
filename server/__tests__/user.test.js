@@ -2,7 +2,7 @@
 import { getUser, update, deleteUser, follow, unFollow } from './userController';
 import User from '../models/User';
 
-// Mock the required dependencies
+// required dependencies
 jest.mock('../models/User');
 
 describe('User Controller', () => {

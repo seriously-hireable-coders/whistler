@@ -1,10 +1,10 @@
 import mongoose from 'mongoose';
-import WhistleModel from './your-file.js';
+import WhistleModel from './Whistle.js';
 
 describe('Whistle Model', () => {
   beforeAll(() => {
 
-    mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true });
+    mongoose.connect('mongodb://localhost:5000/test', { useNewUrlParser: true });
   });
 
   afterAll(async () => {

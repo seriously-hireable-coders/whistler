@@ -65,7 +65,6 @@ describe('Signup Function', () => {
     };
     const res = {};
 
-    /
     const genSaltSyncMock = jest.spyOn(bcrypt, 'genSaltSync').mockImplementation(() => {
       throw new Error('Some error occurred');
     });
