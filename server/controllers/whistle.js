@@ -3,6 +3,8 @@ import { handleError } from "../error.js";
 import User from "../models/User.js";
 
 export const createWhistle = async (req, res, next) => {
+  console.log('whistle created'),
+  console.log(req.body);
 
   const newWhistle = new Whistle(req.body);
   try {

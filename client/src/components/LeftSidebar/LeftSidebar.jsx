@@ -80,7 +80,7 @@ const LeftSidebar = () => {
           <p className="font-bold">@{currentUser.username}</p>
         </div>
         <div>
-          <Link to="signin">
+          <Link to="/signin">
             <button
               className="bg-blue-500 px-4 py-2 text-white rounded-full"
               onClick={handleLogout}
