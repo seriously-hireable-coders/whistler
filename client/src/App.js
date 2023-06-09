@@ -48,7 +48,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-// export const URL = process.env.REACT_APP_SERVER
+export const URL = process.env.REACT_APP_SERVER
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
