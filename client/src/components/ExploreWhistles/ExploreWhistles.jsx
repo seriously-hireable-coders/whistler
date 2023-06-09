@@ -12,7 +12,7 @@ const ExploreWhistles = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const exploreWhistles = await axios.get("/whistles/explore");
+        const exploreWhistles = await axios.get('/whistles/explore');
         setExplore(exploreWhistles.data);
       } catch (err) {
         console.log('error', err);
