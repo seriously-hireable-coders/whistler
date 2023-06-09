@@ -9,7 +9,7 @@ export function renderWithProviders(
   ui,
   {
     preloadedState = {
-      currentUser: {"_id":{"$oid":"647b3b87c91be26126908b09"},"username":"thomasl","email":"thomasl@gmail.com","password":"$2a$10$9/VT8GA5Mxlch9cKZ7dnpulKXOLQhTa4HqD./Heu874.6KhE8KzIy","followers":["647b1d57a425d84b22608ebe"],"following":[],"createdAt":{"$date":{"$numberLong":"1685797767747"}},"updatedAt":{"$date":{"$numberLong":"1686160631387"}},"__v":{"$numberInt":"0"},"profilePicture":"https://firebasestorage.googleapis.com/v0/b/whistler-b627a.appspot.com/o/1686089593024Mi%20(2).jpg?alt=media&token=d9e051ff-2170-4162-86f5-123566db9716"},
+      currentUser: {"_id":{"$oid":"354"},"username":"aa","email":"aa@gmail.com","password":"343y","followers":["er"],"following":[],"createdAt":{"$date":{"$numberLong":"454"}},"updatedAt":{"$date":{"$numberLong":"54"}},"__v":{"$numberInt":"0"},"profilePicture":"sth.jpg"},
       isLoading: false,
       error: false,
     },
@@ -22,7 +22,7 @@ export function renderWithProviders(
     return <Provider store={store}>{children}</Provider>
   }
 
-  // Return an object with the store and all of RTL's query functions
+
   return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) }
 }
 
