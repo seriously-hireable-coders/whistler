@@ -55,5 +55,5 @@
   "devDependencies": {
     "tailwindcss": "^3.3.2"
   },
-  "proxy": "https://whistler-server.onrender.com"
+  "proxy": "https://whistler-server.onrender.com/api"
 }
