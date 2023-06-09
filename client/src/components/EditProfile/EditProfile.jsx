@@ -12,7 +12,6 @@ import app from '../../firebase';
 
 const EditProfile = ({ setOpen }) => {
   const { currentUser } = useSelector((state) => {
-    console.log('currentUser', currentUser);
     return state.user
   });
   const [img, setImg] = useState(null);
