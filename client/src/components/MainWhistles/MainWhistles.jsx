@@ -13,7 +13,8 @@ const MainWhistles = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const submitWhistle = await axios.post('/whistles', {
+      console.log(process.env.REACT_APP_SERVER);
+      const submitWhistle = await axios.post(`${process.env.REACT_APP_SERVER}/whistles`, {
         userId: currentUser._id,
         description: whistleText,
       });
