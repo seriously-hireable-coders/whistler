@@ -2,7 +2,7 @@
 
 ## Description
 
-### Introducing Whistler: Unleash Your Voice, Connect, and Share!
+### Introducing Whistler: Unleash Your Voice, Connect, and Share
 
 - Whistler is a dynamic and vibrant social media app that takes inspiration from the essence of Twitter while adding its own unique twist. Designed to empower users and create meaningful connections, Whistler provides a platform for individuals to express themselves, engage in conversations, and share their thoughts with the world.
 
@@ -42,4 +42,3 @@
 #### Project Presentation
 
 [June 9th 2023 Presentation](https://docs.google.com/presentation/d/1DKBawXIetiZfcQzxI6bU2XBQVCTD19D0R795Gava4kU/edit?usp=sharing)
-
